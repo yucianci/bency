@@ -1,3 +1,4 @@
+import { Grid } from '@mui/material';
 import styled from 'styled-components';
 
 export const Main = styled.div`
@@ -32,6 +33,20 @@ export const ModalHeader = styled.div`
 
 `;
 
-export const ModalBody = styled.div`
+export const Content = styled.div`
   padding: 36px;
+`;
+
+export const Row = styled(Grid)`
+  margin: 24px 0;
+`;
+
+export const ModalFooter = styled.div`
+  display: flex;
+  justify-content: end;
+  padding: 32px 0 0;
+
+  button {
+    padding: 8px 18px;
+  }
 `;
