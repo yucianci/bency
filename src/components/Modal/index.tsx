@@ -11,10 +11,18 @@ interface IModal {
   title: string;
 }
 
-const Modal = ({
-  modalIsOpen, setModalIsOpen, children, title,
+export const Modal = ({
+  modalIsOpen,
+  setModalIsOpen,
+  children,
+  title,
 }: IModal) => (
-  <Dialog open={modalIsOpen} onClose={() => setModalIsOpen(false)} fullWidth maxWidth="md">
+  <Dialog
+    open={modalIsOpen}
+    onClose={() => setModalIsOpen(false)}
+    fullWidth
+    maxWidth="md"
+  >
     <Wrapper style={{ color: '#ecf0f1' }}>
       <ModalHeader>
         <h1>{title}</h1>
@@ -26,5 +34,3 @@ const Modal = ({
     </Wrapper>
   </Dialog>
 );
-
-export default Modal;
