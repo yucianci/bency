@@ -22,6 +22,9 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
+
+    width: 100vw;
+    height: 100vh;
   }
   
   *:focus {
@@ -38,5 +41,9 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+  }
+
+  .MuiDialog-paper {
+    background: transparent !important;
   }
 `;
