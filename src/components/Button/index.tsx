@@ -7,14 +7,15 @@ interface IButton {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   isIconButton?: boolean;
   children?: React.ReactNode;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 const Button = ({
-  variant, onClick, isIconButton, children,
+  variant, onClick, isIconButton, children, type,
 }: IButton) => (
   <>
     {!isIconButton ? (
-      <MuiButton variant={variant} onClick={onClick || undefined}>
+      <MuiButton variant={variant} type={type} onClick={onClick || undefined}>
         {children}
       </MuiButton>
     ) : (

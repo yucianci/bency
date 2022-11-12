@@ -46,4 +46,16 @@ export default createGlobalStyle`
   .MuiDialog-paper {
     background: transparent !important;
   }
+
+  .MuiFormLabel-root, .Mui-focused{
+    color: #ecf0f1 !important;
+  }
+
+  .MuiInputBase-input{
+    color: #e0e0e0dc !important;
+  }
+
+  .MuiOutlinedInput-notchedOutline {
+    border-color: #383838 !important;
+  }
 `;
