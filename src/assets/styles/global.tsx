@@ -23,8 +23,8 @@ export default createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
 
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
   }
   
   *:focus {

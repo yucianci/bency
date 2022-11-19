@@ -15,6 +15,16 @@ export const ModalHeader = styled.div`
   h1 {
     font-weight: 500;
     font-size: 1.7rem;
+
+    @media (max-width: 600px) {
+      font-weight: 500;
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    font-weight: 500;
+    font-size: 1.2rem;
   }
 
 `;

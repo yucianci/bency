@@ -6,10 +6,11 @@ interface ITextField {
   name: string;
   label: string;
   methods: UseFormReturn<any>;
-  type?: 'text' | 'number'
+  type?: 'text' | 'number';
   required?: boolean;
   autoFocus?: boolean;
   disabled?: boolean;
+  multiline?: boolean;
 }
 
 export default function TextField({
@@ -20,6 +21,7 @@ export default function TextField({
   autoFocus,
   disabled,
   methods,
+  multiline,
 }: ITextField) {
   return (
     <Controller
@@ -35,6 +37,8 @@ export default function TextField({
           required={required}
           disabled={disabled}
           autoFocus={autoFocus}
+          multiline={multiline}
+          rows={multiline ? 5 : 0}
           style={{ color: 'white', width: '100%' }}
           onChange={(item) => onChange(item)}
         />

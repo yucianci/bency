@@ -1,6 +1,6 @@
 import { IconButton } from '@mui/material';
-import MuiButton from '@mui/material/Button';
 import React from 'react';
+import { MuiButton } from './styles';
 
 interface IButton {
   variant?: 'outlined' | 'outlined' | 'text';
@@ -8,14 +8,15 @@ interface IButton {
   isIconButton?: boolean;
   children?: React.ReactNode;
   type?: 'button' | 'submit' | 'reset';
+  color?: 'inherit' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning' | undefined
 }
 
 const Button = ({
-  variant, onClick, isIconButton, children, type,
+  variant, onClick, isIconButton, children, type, color,
 }: IButton) => (
   <>
     {!isIconButton ? (
-      <MuiButton variant={variant} type={type} onClick={onClick || undefined}>
+      <MuiButton variant={variant} type={type} color={color} onClick={onClick || undefined}>
         {children}
       </MuiButton>
     ) : (
@@ -24,7 +25,6 @@ const Button = ({
       </IconButton>
     )}
   </>
-
 );
 
 export default Button;
