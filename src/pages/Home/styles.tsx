@@ -4,7 +4,8 @@ import styled from 'styled-components';
 export const Main = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 48px;
+  flex-wrap: wrap;
+  padding: 140px 48px 0;
 
   h3 {
     font-weight: normal;
@@ -16,6 +17,12 @@ export const Navbar = styled.nav`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 60px;
+  padding: 0 32px;
+
+  @media (max-width: 900px) {
+    padding: 0px;
+  }
 `;
 
 export const ModalHeader = styled.div`
@@ -49,4 +56,11 @@ export const ModalFooter = styled.div`
   button {
     padding: 8px 18px;
   }
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
 `;
