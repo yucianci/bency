@@ -6,6 +6,10 @@ export const Main = styled.div`
   flex-wrap: wrap;
   padding: 140px 48px 0;
 
+  @media (max-width: 900px) {
+    padding: 140px 24px 0;
+  }
+
   h3 {
     font-weight: normal;
     opacity: 0.5;
@@ -118,6 +122,7 @@ export const LargeNotice = styled.div`
 
   div {
     display: flex;
+    align-items: center;
 
     p {
       margin: 0 50px;
@@ -126,7 +131,16 @@ export const LargeNotice = styled.div`
   }
 
   img {
-    width: 40%;
+    width: 30%;
+    padding: 20px 40px 60px;
+  }
+
+  @media (max-width: 1600px) {
+    img {
+      width: 40%;
+      height: 500px;
+      padding: 20px 40px 60px;
+    }
   }
 
   @media (max-width: 1400px) {
