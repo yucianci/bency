@@ -1,140 +1,92 @@
-/* eslint-disable no-const-assign */
-import React, { useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { Grid } from '@mui/material';
-import { Send } from '@mui/icons-material';
-import axios from 'axios';
+import React from 'react';
 import {
-  Main, Content, Navbar, Row, ModalFooter, Wrapper,
+  Breakline,
+  Container,
+  Description,
+  LargeNotice,
+  Main,
+  Navbar,
+  Notices,
+  Strong,
+  Title,
 } from './styles';
-import Button from '../../components/Button';
-import { defaultValues } from '../../data';
-import TextField from '../../components/TextField';
-import { Modal } from '../../components/Modal';
-import Card from '../../components/Card';
-import Loader from '../../components/Loader';
-import { formatedPokedexNumber } from '../../utils';
-import ScrollButton from '../../components/ScroolTop';
+import pikachuPng from '../../assets/img/pikachu.png';
 
 const Home = () => {
-  const [pokemon, setPokemon] = useState<any>([]);
-  const [page, setPage] = useState(0);
-  const [count, setCount] = useState(0);
-  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
-  const [loading, setLoading] = useState<boolean>(false);
-
-  useEffect(() => {
-    setLoading(true);
-    axios
-      .get(`https://pokeapi.co/api/v2/pokemon?offset=${page}&limit=20`)
-      .then((response) => {
-        setPokemon(() => [...pokemon, ...response.data.results]);
-        setCount(response.data.count);
-      })
-      .finally(() => setLoading(false));
-  }, [page]);
-
-  const methods = useForm({ defaultValues });
-
-  const onSubmit = (data: any) => {
-    alert(JSON.stringify(data));
-    setModalIsOpen(false);
-  };
-
-  const pokemonTotal = `${formatedPokedexNumber(page + 20)} / ${count}`;
-
-  const handleScroll = () => {
-    const windowInnerHeight = window.innerHeight;
-    const documentScrollTop = document.documentElement.scrollTop;
-    const documentScrollHeight = document.documentElement.scrollHeight;
-
-    const isBottomPage = windowInnerHeight + documentScrollTop + 1 > documentScrollHeight;
-
-    if (isBottomPage) {
-      setPage((previousPage) => previousPage + 20);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
+  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   return (
     <>
-      <ScrollButton />
-      {loading && <Loader />}
       <Main>
         <Navbar>
-          <h3>Pokédex</h3>
-
-          <h3>{pokemonTotal}</h3>
-
-          {/* <Button
-          variant="outlined"
-          onClick={() => {
-            setModalIsOpen(true);
-            methods.reset();
-          }}
-        >
-          Contato
-        </Button> */}
-          <Modal
-            title="Entre em contato conosco!"
-            modalIsOpen={modalIsOpen}
-            setModalIsOpen={setModalIsOpen}
-          >
-            <Content>
-              <form onSubmit={methods.handleSubmit(onSubmit)}>
-                <Row container spacing={2}>
-                  <Grid item sm={12} xs={12}>
-                    <TextField
-                      name="name"
-                      label="Nome completo"
-                      required
-                      methods={methods}
-                    />
-                  </Grid>
-                </Row>
-
-                <Row container spacing={2}>
-                  <Grid item sm={12} xs={12}>
-                    <TextField
-                      name="email"
-                      label="E-mail"
-                      required
-                      methods={methods}
-                    />
-                  </Grid>
-                </Row>
-
-                <Row container spacing={2}>
-                  <Grid item sm={12} xs={12}>
-                    <TextField
-                      name="feedback"
-                      label="Feedback"
-                      multiline
-                      required
-                      methods={methods}
-                    />
-                  </Grid>
-                </Row>
-                <ModalFooter>
-                  <Button variant="outlined" type="submit" color="success">
-                    Enviar
-                    <Send />
-                  </Button>
-                </ModalFooter>
-              </form>
-            </Content>
-          </Modal>
+          <h3>Página inicial</h3>
         </Navbar>
 
-        <Wrapper>
-          {pokemon.map((item: any) => (
-            <Card key={item.name} name={item.name} />
-          ))}
-        </Wrapper>
+        <Notices>
+          <Container>
+            <Title>Bency Company</Title>
+            <Description>
+              A empresa nasceu de uma ideia empreendedora dos desenvolvedores
+              {' '}
+              <Strong>Dennys Bueno</Strong>
+              {' '}
+              e
+              {' '}
+              <Strong>Yuri Cianci</Strong>
+              , que é basicamente facilitar e deixar mais acessível informações
+              sobre algum tema, como por exemplo uma pokédex que contém
+              informações de todos os pokémons.
+              <br />
+              <br />
+              A Bency é uma empresa que acredita que o desenvolvimento de
+              software é uma arte, que deve ser feita com paixão e dedicação,
+              utilizando as tecnologias mais modernas e atingindo os níveis mais
+              altos de qualidade.
+            </Description>
+          </Container>
+
+          <Container>
+            <Title>PokeBen</Title>
+            <Description>
+              A PokeBen foi o primeiro projeto desenvolvido pela
+              {' '}
+              <Strong>Bency, </Strong>
+              {' '}
+              e também o primeiro a ser finalizado.
+              <br />
+              <br />
+              A PokeBen é uma mini enciclopédia de pokémons e nela você
+              conseguirá ver todos os pokémons existentes e informações
+              relevantes sobre eles, de forma elegante e prática!
+            </Description>
+          </Container>
+        </Notices>
+
+        <Breakline />
+
+        <LargeNotice>
+          <Title>Pokémon: A História</Title>
+          <div>
+            <img src={pikachuPng} alt="" />
+            <Description>
+              Criada por Satoshi Tajiri, a saga de desenhos animados japoneses
+              Pokémon (Pocket Monsters ou Monstros de Bolso) foi uma verdadeira
+              febre nos anos 90, realidade que resultou na criação de vários
+              games e filmes da série. Falando especificamente sobre os jogos da
+              mesma, os que mais se destacaram foram os games de RPG feitos para
+              a plataforma Game Boy e Game Boy Advance: Pokémon Yellow, Blue,
+              Red, SIlver, Gold, Crystal, Ruby e Sapphire.
+              <br />
+              <br />
+              Quando jovem, o criador dos monstrinhos, Satoshi Tajiri, gostava
+              bastante de observar e estudar os insetos. Assim, baseado no
+              conceito da metamorfose, o japonês idealizou um mundo no qual os
+              jogadores batalhavam uns com os outros usando monstros que, com o
+              passar do tempo e com os ganhos de experiência, evoluíam e ficavam
+              mais poderosos. Foi a partir dessa ideia que nasceu Pokémon, em
+              1994.
+            </Description>
+          </div>
+        </LargeNotice>
       </Main>
     </>
   );
