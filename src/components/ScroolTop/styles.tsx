@@ -14,12 +14,19 @@ export const Button = styled.div`
   font-size: 3.5rem;
   z-index: 1;
   cursor: pointer;
-  color: #bdbdbd;
-  opacity: .5;
-  transition: all .3s;
+  color: #ce4141;
+  opacity: 0.5;
+  transition: all 0.3s;
+
+  @media (max-width: 1300px) {
+    left: 90%;
+  }
+
+  @media (max-width: 1300px) {
+    left: 85%;
+  }
 
   :hover {
     opacity: 1;
   }
-  
 `;
