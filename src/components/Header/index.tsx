@@ -5,7 +5,7 @@ import { Main } from './styles';
 const Header = () => (
   <Main>
     <Link to="/">PokeBen</Link>
-    <a href="/pokedex">Pokédex</a>
+    <Link to="/pokedex">Pokédex</Link>
   </Main>
 );
 

@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-// import { pokemonTypes } from '../../data';
 import { formatedPokedexNumber } from '../../utils';
 import { Modal } from '../Modal';
 import {

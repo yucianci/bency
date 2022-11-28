@@ -13,7 +13,7 @@ import {
 import pikachuPng from '../../assets/img/pikachu.png';
 
 const Home = () => {
-  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 0, left: 0 });
   return (
     <>
       <Main>

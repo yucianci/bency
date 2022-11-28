@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Main, Navbar, Wrapper } from './styles';
+import { Button } from '@mui/material';
+import {
+  Footer, Main, Navbar, Wrapper,
+} from './styles';
 import Card from '../../components/Card';
 import Loader from '../../components/Loader';
 import { formatedPokedexNumber } from '../../utils';
@@ -25,23 +28,6 @@ const Pokedex = () => {
 
   const pokemonTotal = `${formatedPokedexNumber(page + 20)} / ${count}`;
 
-  const handleScroll = () => {
-    const windowInnerHeight = window.innerHeight;
-    const documentScrollTop = document.documentElement.scrollTop;
-    const documentScrollHeight = document.documentElement.scrollHeight;
-
-    const isBottomPage = windowInnerHeight + documentScrollTop + 1 > documentScrollHeight;
-
-    if (isBottomPage) {
-      setPage((previousPage) => previousPage + 20);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <>
       <Main>
@@ -54,6 +40,17 @@ const Pokedex = () => {
             <Card key={item.name} name={item.name} />
           ))}
         </Wrapper>
+        <Footer>
+          <Button
+            type="button"
+            variant="outlined"
+            color="primary"
+            onClick={() => setPage((previousPage) => previousPage + 20)}
+          >
+            Carregar mais...
+          </Button>
+        </Footer>
+
       </Main>
 
       <ScrollButton />

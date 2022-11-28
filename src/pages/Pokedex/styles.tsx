@@ -31,3 +31,10 @@ export const Wrapper = styled.div`
   justify-content: space-around;
   flex-wrap: wrap;
 `;
+
+export const Footer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 50px 0;
+`;
