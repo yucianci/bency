@@ -1,19 +1,11 @@
 import React from 'react';
-import Button from '../Button';
+import { Link } from 'react-router-dom';
 import { Main } from './styles';
 
 const Header = () => (
   <Main>
-    <h1>Bency</h1>
-    <Button
-      variant="outlined"
-      // onClick={() => {
-      //   setModalIsOpen(true);
-      //   methods.reset();
-      // }}
-    >
-      Contato
-    </Button>
+    <Link to="/">PokeBen</Link>
+    <a href="/pokedex">Pokédex</a>
   </Main>
 );
 

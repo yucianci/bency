@@ -11,6 +11,7 @@ export const ModalHeader = styled.div`
   padding: 16px;
   border-bottom: 1px solid #383838;
   margin: 0 20px;
+  text-transform: capitalize;
 
   h1 {
     font-weight: 500;

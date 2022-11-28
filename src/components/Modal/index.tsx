@@ -21,7 +21,7 @@ export const Modal = ({
     open={modalIsOpen}
     onClose={() => setModalIsOpen(false)}
     fullWidth
-    maxWidth="md"
+    maxWidth="sm"
   >
     <Wrapper style={{ color: '#ecf0f1' }}>
       <ModalHeader>
