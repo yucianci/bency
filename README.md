@@ -1,7 +1,14 @@
+# Pokeben - Hackathon Poject:
 
-# Gazin tech - Challenge Poject:
+![image](https://user-images.githubusercontent.com/63871510/204194651-4daa2dbe-9a0d-4c97-9d44-12c74a38417f.png)
 
-![image](https://user-images.githubusercontent.com/63871510/209068109-faeae181-12f3-40d9-ad1c-7e793d4fd43a.png)
+<p align="center"> Deployed in <a href="https://pokeben.netlify.app/">Pokeben - Bency</a> </p>
+
+<br>
+
+## Description:
+
+<p>PokeMon is a mini Pokemon encyclopedia and in it you will be able to see all existing Pokemon and relevant information about them, in an elegant and practice!</p>
 
 <br>
 
